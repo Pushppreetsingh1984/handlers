@@ -2,12 +2,13 @@
 - hosts: all
   become: true
   tasks:
-          - copy:
-              content: "welcome to NZ"
-              dest: /tmp/abc.txt
+        - copy: 
+            content: "hello world"
+            dest: /tmp/abc.txt
             notify: restart_apache
+
   handlers:
-        - name: restart_apache
+        - name: restart apache
           service:
             name: httpd
             state: restarted
