@@ -1,8 +1,9 @@
 ---
 - hosts: all
+  become: yes
   tasks:
           - copy:
-              content: "welcome to NZ"
+              content: "welcome to USA"
               dest: /tmp/newzeland
             
 ...
