@@ -3,6 +3,14 @@
   become: yes
   tasks:
           - copy:
-              content: "welcome to aus"
+              content: "welcome to NZ"
               dest: /tmp/newzeland
+            notify: restart_apache
+
+  handlers:
+          - name: restart_apache
+            service:
+              name: httpd
+              state: restarted
+              enabled: yes
 ...
