@@ -2,8 +2,15 @@
 - hosts: all
   tasks:
           - copy:
-              content: "welcome to nz"
+              content: "welcome to aus/nx"
               dest: /tmp/newzeland
-    
+            notify: restart_apache
+  handlers:
+          - name: restart_apache
+            service:
+              name: httpd
+              state: restarted
+              enabled: yes
+
               
 ...
