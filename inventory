@@ -1,5 +1,5 @@
 [local]
-localhost
+testserver
 
 [pracitce]
-localhost.localdomain
+testserver

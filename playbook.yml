@@ -3,8 +3,8 @@
   become: yes
   tasks:
           - copy:
-              content: "welcome to aus/nx"
-              dest: /tmp/newzeland
+              content: "Welcome Mangal Singh RHCA"
+              dest: /tmp/abc.txt
             notify: restart_apache
   handlers:
           - name: restart_apache
