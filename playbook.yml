@@ -1,8 +1,16 @@
 ---
 - hosts: all
+  become: yes
   tasks:
           - copy:
-              content: "Welcome Mangal Singh RHCA"
+              content: "Mangal Singh RHCA 2021"
               dest: /tmp/abc.txt
-              
+            notify: Restart appache
+  handlers:
+          - name: Restart appache
+            service:
+              name: httpd
+              state: restarted
+              enable: yes
+             
 ...
