@@ -5,10 +5,4 @@
           - copy:
               content: "Mangal Singh RHCA 2021"
               dest: /tmp/abc.txt
-            notify: restart_apache
-  handlers:
-          - name: restart_apache
-            service:
-              name: httpd
-              state: restarted
-              enable: yes
+      
