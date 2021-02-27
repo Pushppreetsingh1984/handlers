@@ -2,7 +2,13 @@
 - hosts: all
   become: yes
   tasks:
-          - copy:
-              content: "Mangal Singh RHCA 2021"
-              dest: /tmp/abc.txt
-      
+    - copy:
+        content: "Mangal Singh RHCA 2023"
+        dest: /tmp/abc.txt
+      notify: restart_httpd
+  handlers:
+    - name: restart_httpd
+      service:
+        name: httpd
+        state: restart
+        enabled: yes
